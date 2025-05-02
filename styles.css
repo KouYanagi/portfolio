@@ -1,123 +1,458 @@
+/* リセット */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  
+  /* テーマ変数 */
+  :root {
+    --bg-color: #1a1a1a;
+    --section-bg: #2c2c2c;
+    --text-color: #fff;
+    --accent-color: #00cccc;
+    --highlight-color: #ffd700;
+    --border-color: #800080;
+  }
+  body.light-mode {
+    --bg-color: #f5f5f5;
+    --section-bg: #fff;
+    --text-color: #333;
+    --accent-color: #800080;
+    --highlight-color: #ff9900;
+    --border-color: #4a4a4a;
+  }
+  
+  /* フォント */
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Zen Maru Gothic', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #1a1a1a;
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--text-color);
   }
-  header {
-    background: #2c2c2c;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  header h1 {
-    font-size: 2.5rem;
-    color: #ffd700; /* FF14風ゴールド */
-  }
-  nav ul {
-    list-style: none;
-    margin-top: 1rem;
+  
+  /* ナビゲーションバー */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--section-bg);
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
   }
-  nav ul li {
-    display: inline-block;
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--highlight-color);
   }
-  nav a {
-    color: #800080; /* FF14風パープル */
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  .navbar-menu a {
+    color: var(--accent-color);
     text-decoration: none;
-    padding: 8px 16px;
-    border: 2px solid #800080;
-    border-radius: 10px;
-    transition: background 0.3s, text-shadow 0.3s;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s, border-color 0.3s;
   }
-  nav a:hover {
-    background: #800080;
-    color: #ffd700;
-    text-shadow: 0 0 10px #800080;
+  .navbar-menu a:hover {
+    color: var(--highlight-color);
+    border: 1px solid var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
   }
-  section {
-    padding: 2rem;
-    max-width: 800px;
+  .navbar-toggle {
+    display: none;
+    color: var(--highlight-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .theme-toggle {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .theme-toggle:hover {
+    color: var(--highlight-color);
+  }
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: var(--section-bg);
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .navbar-menu.active {
+      display: flex;
+    }
+    .navbar-toggle {
+      display: block;
+    }
+  }
+  
+  /* ヒーローセクション */
+  .hero {
+    background: url('https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg') no-repeat center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--highlight-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px var(--border-color);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--border-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--accent-color);
+    transition: background 0.3s, transform 0.2s;
+  }
+  .cta-button:hover {
+    background: var(--accent-color);
+    transform: scale(1.03);
+  }
+  
+  /* セクション */
+  .section {
+    padding: 3rem 2rem;
+    max-width: 1000px;
     margin: 0 auto;
-    background: linear-gradient(45deg, #ff69b4, #00ffff); /* アニメ風 */
-    border-radius: 10px;
+    background: linear-gradient(135deg, var(--section-bg), var(--bg-color));
+    border-radius: 8px;
     margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0, 204, 204, 0.2);
   }
   h2 {
     font-size: 2rem;
-    color: #ffd700;
+    font-weight: 700;
+    color: var(--highlight-color);
     margin-bottom: 1rem;
+    text-align: center;
   }
-  p, ul {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+  
+  /* 区切り線 */
+  .section-divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--border-color), var(--accent-color));
+    margin: 0 auto 1.5rem;
   }
-  ul {
-    list-style: square;
-    margin-left: 1.5rem;
-  }
-  a {
-    color: #ff69b4;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
-    }
-    nav ul {
-      flex-direction: column;
-    }
-    section {
-      padding: 1rem;
-    }
-  }
-
-  nav ul {
-    background: rgba(128, 0, 128, 0.2);
-    padding: 1rem;
-    border-radius: 10px;
-  }
-
-  section {
-    box-shadow: 0 0 10px #ff69b4;
-  }
-
-  section {
-    animation: fadeIn 1s ease-in;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  section {
-    animation: fadeIn 1s ease-in;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .player {
+  
+  /* 自己紹介 */
+  .about-content {
     display: flex;
-    gap: 10px;
-    padding: 1rem;
-    background: #2c2c2c;
-    border-radius: 10px;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
   }
-  .player-button {
-    background: #ff69b4;
-    padding: 10px 20px;
+  .about-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 8px var(--border-color);
+  }
+  .about-text {
+    flex: 1;
+    max-width: 600px;
+  }
+  .about-text p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* インスピレーション */
+  .inspiration-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+  }
+  .slider-item {
+    flex: 0 0 300px;
+    text-align: center;
+    scroll-snap-align: start;
+  }
+  .slider-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 8px var(--border-color);
+  }
+  .slider-item p {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+  }
+  
+  /* 経験 */
+  .experience-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .experience-list li {
+    background: var(--bg-color);
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+  }
+  .experience-list li i {
+    color: var(--highlight-color);
+    margin-right: 0.5rem;
+  }
+  .experience-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px var(--accent-color);
+  }
+  
+  /* スキル */
+  .skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .skills-list li {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .skills-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px var(--accent-color);
+  }
+  .skills-list li i {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* プロジェクト */
+  .project-card {
+    background: var(--bg-color);
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box, linear-gradient(to right, var(--border-color), var(--accent-color)) border-box;
+  }
+  .project-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+  }
+  .project-card h3 {
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+    margin-bottom: 0.5rem;
+  }
+  .project-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .tech {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+  }
+  .badge {
+    display: inline-block;
+    background: var(--border-color);
+    color: var(--text-color);
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    margin-left: 0.5rem;
+  }
+  
+  /* 連絡先 */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 450px;
+    margin: 0 auto 1.5rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background: var(--section-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+  }
+  .contact-form textarea {
+    min-height: 120px;
+  }
+  .contact-form button {
+    padding: 10px;
+    background: var(--border-color);
+    color: var(--text-color);
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
+  }
+  .contact-form button:hover {
+    background: var(--accent-color);
+  }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .contact-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    background: var(--bg-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--accent-color);
+    transition: background 0.3s, color 0.3s;
+  }
+  .contact-button i {
+    margin-right: 0.5rem;
+  }
+  .contact-button:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+  }
+  
+  /* フッター */
+  .footer {
+    background: linear-gradient(135deg, var(--section-bg), var(--bg-color));
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+  }
+  .footer-content p {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  .footer-links a i {
+    margin-right: 0.5rem;
+  }
+  .footer-links a:hover {
+    color: var(--highlight-color);
+  }
+  
+  /* フェードインアニメーション */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* レスポンシブデザイン */
+  @media (max-width: 768px) {
+    .hero {
+      height: 40vh;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .about-image {
+      width: 100%;
+      max-width: 200px;
+    }
+    .section {
+      padding: 2rem 1rem;
+    }
+    .skills-list, .experience-list {
+      grid-template-columns: 1fr;
+    }
+    .project-image, .slider-item img {
+      max-width: 250px;
+    }
+    .inspiration-slider {
+      flex-direction: column;
+      align-items: center;
+    }
+    .slider-item {
+      flex: 0 0 auto;
+    }
   }
