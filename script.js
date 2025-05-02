@@ -49,6 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
   
+    // フォーム送信
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('メッセージを送信しました！');
+            form.reset();
+          } else {
+            alert('送信に失敗しました。もう一度お試しください。');
+          }
+        })
+        .catch(() => alert('エラーが発生しました。後でもう一度お試しください。'));
+    });
+  
     // ヒーローCTAボタンのホバーアニメーション
     const ctaButton = document.querySelector('.cta-button');
     ctaButton.addEventListener('mouseover', () => {
@@ -56,14 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     ctaButton.addEventListener('mouseout', () => {
       ctaButton.style.boxShadow = 'none';
-    });
-  
-    // フォーム送信時のフィードバック
-    const form = document.querySelector('.contact-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('メッセージを送信しました！');
-      form.reset();
     });
   
     // コンタクトボタンとフッターリンクのホバーアニメーション
