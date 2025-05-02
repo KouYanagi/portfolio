@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kou's Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=3">
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="description" content="Kouのポートフォリオ。FF14とアニメにインスパイアされたWeb開発、8年のテスター経験で高品質なサイトを。">
   <meta name="keywords" content="Web開発, ポートフォリオ, FF14, アニメ, テスター, HTML, CSS, JavaScript, Kou">
   <meta name="author" content="Kou">
   <meta property="og:title" content="Kouのポートフォリオ">
   <meta property="og:description" content="FF14とアニメ風のWeb開発。8年のテスター経験で高品質なサイトを。">
-  <meta property="og:image" content="https://KouYanagi.github.io/portfolio/images/hero-bg.jpg">
+  ECF<meta property="og:image" content="https://KouYanagi.github.io/portfolio/images/hero-bg.jpg">
   <meta property="og:url" content="https://KouYanagi.github.io/portfolio">
   <meta property="og:type" content="website">
+  <title>Kou's Portfolio</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="icon" type="image/x-icon" href="/portfolio/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- ナビゲーションバー -->
   <nav class="navbar">
     <div class="navbar-brand">Kou</div>
-    <div class="navbar-toggle"><i class="fas fa-bars"></i></div>
+    <div class="navbar-toggle" aria-label="メニューを開閉"><i class="fas fa-bars"></i></div>
     <ul class="navbar-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#inspiration">Inspiration</a></li>
@@ -29,7 +30,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+    <button class="theme-toggle" aria-label="テーマ切り替え"><i class="fas fa-moon"></i></button>
   </nav>
 
   <!-- ヒーローセクション -->
@@ -131,13 +132,13 @@
   <section id="contact" class="section">
     <h2>Contact</h2>
     <div class="section-divider"></div>
-    <form action="https://formspree.io/f/mbjqjrdl" method="POST" class="contact-form">
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="_next" value="/portfolio/thanks.html">
-      <input type="hidden" name="_replyto" value="{email}">
-      <input type="hidden" name="_subject" value="Kouのポートフォリオからのメッセージ">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="your-access-key">
+      <input type="hidden" name="subject" value="Kouのポートフォリオからのメッセージ">
+      <input type="hidden" name="redirect" value="https://KouYanagi.github.io/portfolio/thanks.html">
+      <input type="email" name="email" placeholder="Your Email" required aria-label="メールアドレス">
+      <textarea name="message" placeholder="Your Message" required aria-label="メッセージ"></textarea>
+      <input type="text" name="h-captcha-response" style="display:none">
       <button type="submit">送信</button>
     </form>
     <div class="contact-links">
