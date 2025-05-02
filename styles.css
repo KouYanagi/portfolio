@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  header {
+    background: #2c2c2c;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  header h1 {
+    font-size: 2.5rem;
+    color: #ffd700; /* FF14風ゴールド */
+  }
+  nav ul {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  nav a {
+    color: #800080; /* FF14風パープル */
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid #800080;
+    border-radius: 10px;
+    transition: background 0.3s, text-shadow 0.3s;
+  }
+  nav a:hover {
+    background: #800080;
+    color: #ffd700;
+    text-shadow: 0 0 10px #800080;
+  }
+  section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, #ff69b4, #00ffff); /* アニメ風 */
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+  }
+  p, ul {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  ul {
+    list-style: square;
+    margin-left: 1.5rem;
+  }
+  a {
+    color: #ff69b4;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    nav ul {
+      flex-direction: column;
+    }
+    section {
+      padding: 1rem;
+    }
+  }
