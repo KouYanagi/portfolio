@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
       alert('メッセージを送信中...');
       console.log('Form submitted to:', form.action);
-      // 標準送信（fetchを削除）
       form.submit();
     });
   

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kou's Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -98,13 +98,13 @@
     <h2>Projects</h2>
     <div class="section-divider"></div>
     <div class="project-card">
-      <img src="images/Project1.jpg" alt="Portfolio site" class="project-image">
+      <img src="images/project1.jpg" alt="Portfolio site" class="project-image">
       <h3>Portfolio Site</h3>
       <p>FF14とアニメにインスパイアされた個人ポートフォリオ。視覚的な魅力とレスポンシブデザインを追求。</p>
       <p class="tech">技術: HTML, CSS, JavaScript</p>
     </div>
     <div class="project-card">
-      <img src="images/Project2.jpg" alt="Anime page placeholder" class="project-image">
+      <img src="images/project2.jpg" alt="Anime page placeholder" class="project-image">
       <h3>Anime-Inspired Page <span class="badge">準備中</span></h3>
       <p>アニメの色彩とデザインを活用したランディングページ。</p>
       <p class="tech">技術: HTML, CSS</p>
@@ -115,11 +115,13 @@
   <section id="contact" class="section">
     <h2>Contact</h2>
     <div class="section-divider"></div>
-    <form action="https://formspree.io/f/xeogaeak" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/mbjqjrdl" method="POST" class="contact-form">
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
       <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="_next" value="https://KouYanagi.github.io/portfolio/thanks.html">
+      <input type="hidden" name="_next" value="/portfolio/thanks.html">
+      <input type="hidden" name="_replyto" value="{email}">
+      <input type="hidden" name="_subject" value="Kouのポートフォリオからのメッセージ">
       <button type="submit">送信</button>
     </form>
     <div class="contact-links">
