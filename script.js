@@ -47,26 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
+    });
   
     // フォーム送信
     const form = document.querySelector('.contact-form');
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(response => {
-          if (response.ok) {
-            alert('メッセージを送信しました！');
-            form.reset();
-          } else {
-            alert('送信に失敗しました。もう一度お試しください。');
-          }
-        })
-        .catch(() => alert('エラーが発生しました。後でもう一度お試しください。'));
+      alert('メッセージを送信中...');
+      console.log('Form submitted to:', form.action);
+      // 標準送信（fetchを削除）
+      form.submit();
     });
   
     // ヒーローCTAボタンのホバーアニメーション
