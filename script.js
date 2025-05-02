@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    });
+    };
   
     // フォーム送信
     const form = document.querySelector('.contact-form');
