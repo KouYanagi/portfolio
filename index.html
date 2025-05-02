@@ -8,7 +8,7 @@
   <meta name="author" content="Kou">
   <meta property="og:title" content="Kouのポートフォリオ">
   <meta property="og:description" content="FF14とアニメ風のWeb開発。8年のテスター経験で高品質なサイトを。">
-  ECF<meta property="og:image" content="https://KouYanagi.github.io/portfolio/images/hero-bg.jpg">
+  <meta property="og:image" content="https://KouYanagi.github.io/portfolio/images/hero-bg.jpg">
   <meta property="og:url" content="https://KouYanagi.github.io/portfolio">
   <meta property="og:type" content="website">
   <title>Kou's Portfolio</title>
@@ -107,21 +107,13 @@
     <h2>Projects</h2>
     <div class="section-divider"></div>
     <div class="project-card">
-      <img src="images/Project1.jpg" alt="Portfolio site" class="project-image">
+      <img src="images/project1.jpg" alt="Portfolio site" class="project-image">
       <h3>Portfolio Site</h3>
       <p>FF14とアニメにインスパイアされた個人ポートフォリオ。視覚的な魅力とレスポンシブデザインを追求。</p>
       <p class="tech">技術: HTML, CSS, JavaScript</p>
     </div>
     <div class="project-card">
-      <img src="images/Project2.jpg
-      <meta name="description" content="Kouのポートフォリオ。FF14とアニメにインスパイアされたWeb開発、8年のテスター経験で高品質なサイトを。">
-  <meta name="keywords" content="Web開発, ポートフォリオ, FF14, アニメ, テスター, HTML, CSS, JavaScript, Kou">
-  <meta name="author" content="Kou">
-  <meta property="og:title" content="Kouのポートフォリオ">
-  <meta property="og:description" content="FF14とアニメ風のWeb開発。8年のテスター経験で高品質なサイトを。">
-  <meta property="og:image" content="https://KouYanagi.github.io/portfolio/images/hero-bg.jpg">
-  <meta property="og:url" content="https://KouYanagi.github.io/portfolio">
-  <meta property="og:type" content="website">" alt="Anime page placeholder" class="project-image">
+      <img src="images/project2.jpg" alt="Anime page placeholder" class="project-image">
       <h3>Anime-Inspired Page <span class="badge">準備中</span></h3>
       <p>アニメの色彩とデザインを活用したランディングページ。</p>
       <p class="tech">技術: HTML, CSS</p>
@@ -132,8 +124,9 @@
   <section id="contact" class="section">
     <h2>Contact</h2>
     <div class="section-divider"></div>
+    <!-- Web3Forms（推奨：自動応答対応） -->
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-      <input type="hidden" name="access_key" value="your-access-key">
+      <input type="hidden" name="access_key" value="ed19e375-a325-453c-bd6e-94b8a27378da">
       <input type="hidden" name="subject" value="Kouのポートフォリオからのメッセージ">
       <input type="hidden" name="redirect" value="https://KouYanagi.github.io/portfolio/thanks.html">
       <input type="email" name="email" placeholder="Your Email" required aria-label="メールアドレス">
@@ -141,6 +134,18 @@
       <input type="text" name="h-captcha-response" style="display:none">
       <button type="submit">送信</button>
     </form>
+    <!-- Formspree（復旧用：コメントアウト、必要なら切り替え） -->
+    <!--
+    <form action="https://formspree.io/f/mbjqjrdl" method="POST" class="contact-form">
+      <input type="email" name="email" placeholder="Your Email" required aria-label="メールアドレス">
+      <textarea name="message" placeholder="Your Message" required aria-label="メッセージ"></textarea>
+      <input type="text" name="_gotcha" style="display:none">
+      <input type="hidden" name="_next" value="/portfolio/thanks.html">
+      <input type="hidden" name="_replyto" value="{email}">
+      <input type="hidden" name="_subject" value="Kouのポートフォリオからのメッセージ">
+      <button type="submit">送信</button>
+    </form>
+    -->
     <div class="contact-links">
       <a href="mailto:kou1997y0211@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> kou1997y0211@gmail.com</a>
       <a href="https://github.com/KouYanagi" target="_blank" class="contact-button"><i class="fab fa-github"></i> github.com/KouYanagi</a>

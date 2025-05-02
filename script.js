@@ -42,14 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('light-mode');
       const isLight = document.body.classList.contains('light-mode');
       themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeToggle.setAttribute('aria-label', isLight ? 'ダークモードに切り替え' : 'ライトモードに切り替え');
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
     if (localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    };
+      themeToggle.setAttribute('aria-label', 'ダークモードに切り替え');
+    }
   
-    // フォーム送信
+    // フォーム送信（Web3Formsは標準送信、Formspree用にログ保持）
     const form = document.querySelector('.contact-form');
     form.addEventListener('submit', (e) => {
       alert('メッセージを送信中...');
