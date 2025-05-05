@@ -1,168 +1,155 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kouのポートフォリオ。FF14とアニメにインスパイアされたWeb開発、8年のテスター経験で高品質なサイトを。">
-  <meta name="keywords" content="Web開発, ポートフォリオ, FF14, アニメ, テスター, HTML, CSS, JavaScript, Kou">
-  <meta name="author" content="Kou">
-  <meta property="og:title" content="Kouのポートフォリオ">
-  <meta property="og:description" content="FF14とアニメ風のWeb開発。8年のテスター経験で高品質なサイトを。">
-  <meta property="og:image" content="https://KouYanagi.github.io/portfolio/images/hero-bg.jpg">
-  <meta property="og:url" content="https://KouYanagi.github.io/portfolio">
-  <meta property="og:type" content="website">
-  <title>Kou's Portfolio</title>
-  <link rel="stylesheet" href="styles.css?v=3">
-  <link rel="icon" type="image/x-icon" href="/portfolio/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Sakiuxのポートフォリオ。洗練されたWeb開発で貴社の課題を解決。">
+  <meta name="keywords" content="Web開発, フリーランス, ポートフォリオ, UIデザイン">
+  <title>Kou Yanagi | ポートフォリオ</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ナビゲーションバー -->
-  <nav class="navbar">
-    <div class="navbar-brand">Kou</div>
-    <div class="navbar-toggle" aria-label="メニューを開閉"><i class="fas fa-bars"></i></div>
-    <ul class="navbar-menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#inspiration">Inspiration</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" aria-label="テーマ切り替え"><i class="fas fa-moon"></i></button>
-  </nav>
-
-  <!-- ヒーローセクション -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Kou</h1>
-      <p>Web開発でアイデアを形に</p>
-      <a href="#contact" class="cta-button">お問い合わせ</a>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#skills">スキル</a></li>
+        <li><a href="#projects">プロジェクト</a></li>
+        <li><a href="#about">自己紹介</a></li>
+        <li><a href="#experience">経験</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="theme-toggle">
+      <button id="theme-toggle" aria-label="テーマを切り替え">
+        <span class="icon">☀️</span>
+      </button>
     </div>
   </header>
 
-  <!-- 自己紹介 -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <div class="section-divider"></div>
-    <div class="about-content">
-      <img src="images/about.jpg" alt="Coding setup" class="about-image">
-      <div class="about-text">
-        <p>こんにちは、Kouです！上流から下流までマルチに活躍できるWeb開発者を目指しています。</p>
-        <p>趣味のFF14の壮大なストーリー、アニメの鮮やかなビジュアル、音楽の感情表現からインスピレーションを得て、ユーザー体験を重視したサイトを構築します。</p>
-        <p>クライアントのニーズを形にするために、HTML, CSS, JavaScriptを学び、ReactやWordPressにも挑戦中です！また、テスターとしては8年間の実績あり、信頼の品質を提供できます。</p>
+  <main>
+    <section id="home">
+      <div class="hero-image">
+        <img src="images/hero.jpg" alt="モダンなWebインターフェースのヒーロー画像">
+        <div class="hero-content">
+          <h1>Sakiux Valinox</h1>
+          <p>洗練されたWeb体験で、貴社のビジョンを次のレベルへ。</p>
+          <a href="#contact" class="btn">ご相談はこちら</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- インスピレーション -->
-  <section id="inspiration" class="section">
-    <h2>Inspiration</h2>
-    <div class="section-divider"></div>
-    <p>FF14の壮大なストーリー、アニメの鮮やかなビジュアル、音楽の感情表現が私のデザインの原動力です。</p>
-    <div class="inspiration-slider">
-      <div class="slider-item">
-        <img src="images/inspiration-ff14.jpg" alt="FF14 inspiration">
-        <p>FF14: 漆黒のヴィランズの深い物語にインスパイア。</p>
+    <section id="skills">
+      <h2>スキル</h2>
+      <h3>熟練スキル</h3>
+      <div class="skill-container">
+        <div class="skill-item" data-skill="html"><img src="images/html.png" alt="HTML5アイコン"><p>HTML5</p><div class="skill-detail">セマンティックな構造でSEOを最適化</div></div>
+        <div class="skill-item" data-skill="css"><img src="images/css.png" alt="CSS3アイコン"><p>CSS3</p><div class="skill-detail">レスポンシブデザインとアニメーション</div></div>
+        <div class="skill-item" data-skill="js"><img src="images/js.png" alt="JavaScriptアイコン"><p>JavaScript</p><div class="skill-detail">DOM操作と非同期処理</div></div>
+        <div class="skill-item" data-skill="figma"><img src="images/figma.png" alt="Figmaアイコン"><p>Figma</p><div class="skill-detail">プロトタイピングとUIデザイン</div></div>
+        <div class="skill-item" data-skill="git"><img src="images/git.png" alt="Git/GitHubアイコン"><p>Git/GitHub</p><div class="skill-detail">バージョン管理とオープンソース</div></div>
+        <div class="skill-item" data-skill="vscode"><img src="images/vscode.png" alt="VS Codeアイコン"><p>VS Code</p><div class="skill-detail">効率的なコーディング環境</div></div>
       </div>
-      <div class="slider-item">
-        <img src="images/inspiration-anime.jpg" alt="Anime inspiration">
-        <p>アニメ: サイバーパンクの色彩で視覚的な魅力を追求。</p>
+      <h3>テスト経験</h3>
+      <div class="skill-container testing">
+        <div class="skill-item" data-skill="testing"><img src="images/testing.png" alt="テストアイコン"><p>テスト経験</p><div class="skill-detail">8年間のUI/機能テストでバグ削減</div></div>
       </div>
-      <div class="slider-item">
-        <img src="images/inspiration-music.jpg" alt="Music inspiration">
-        <p>音楽: 感情を動かすUIデザインを目指して。</p>
+      <h3>学習中スキル</h3>
+      <div class="skill-container learning">
+        <div class="skill-item" data-skill="react"><img src="images/react.png" alt="Reactアイコン"><p>React</p><div class="skill-detail">コンポーネントベースのUIを学習中</div></div>
+        <div class="skill-item" data-skill="node"><img src="images/node.png" alt="Node.jsアイコン"><p>Node.js</p><div class="skill-detail">バックエンド開発の基礎を習得中</div></div>
+        <div class="skill-item" data-skill="uiux"><img src="images/uiux.png" alt="UI/UXアイコン"><p>UI/UXデザイン</p><div class="skill-detail">ユーザー中心設計を学習中</div></div>
+        <div class="skill-item" data-skill="wordpress"><img src="images/wordpress.png" alt="WordPressアイコン"><p>WordPress</p><div class="skill-detail">カスタムテーマ開発を学習中</div></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 経験 -->
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <div class="section-divider"></div>
-    <ul class="experience-list">
-      <li><i class="fas fa-check-circle"></i> テスターとして8年間、Web/モバイルアプリの品質保証に従事。</li>
-      <li><i class="fas fa-check-circle"></i> バグ検出率95%以上、1000件以上の不具合を特定・報告。</li>
-      <li><i class="fas fa-check-circle"></i> テスト計画の策定、自動化ツール（Selenium）の導入経験。</li>
-      <li><i class="fas fa-check-circle"></i> クライアントとの密な連携で、高品質な製品納品を実現。</li>
-    </ul>
-  </section>
-
-  <!-- スキル -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="section-divider"></div>
-    <ul class="skills-list">
-      <li><i class="fas fa-code"></i> Web開発: HTML, CSS, JavaScript</li>
-      <li><i class="fas fa-paint-brush"></i> デザイン: Figma, UI/UXデザイン</li>
-      <li><i class="fas fa-tools"></i> ツール: Git, GitHub, VS Code</li>
-      <li><i class="fas fa-check-circle"></i> テスト: 8年間の実績（品質保証）</li>
-      <li><i class="fas fa-graduation-cap"></i> 学習中: React, WordPress</li>
-    </ul>
-  </section>
-
-  <!-- プロジェクト -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="section-divider"></div>
-    <div class="project-card">
-      <img src="images/project1.jpg" alt="Portfolio site" class="project-image">
-      <h3>Portfolio Site</h3>
-      <p>FF14とアニメにインスパイアされた個人ポートフォリオ。視覚的な魅力とレスポンシブデザインを追求。</p>
-      <p class="tech">技術: HTML, CSS, JavaScript</p>
-    </div>
-    <div class="project-card">
-      <img src="images/project2.jpg" alt="Anime page placeholder" class="project-image">
-      <h3>Anime-Inspired Page <span class="badge">準備中</span></h3>
-      <p>アニメの色彩とデザインを活用したランディングページ。</p>
-      <p class="tech">技術: HTML, CSS</p>
-    </div>
-  </section>
-
-  <!-- 連絡先 -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="section-divider"></div>
-    <!-- Web3Forms（推奨：自動応答対応） -->
-    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-      <input type="hidden" name="access_key" value="ed19e375-a325-453c-bd6e-94b8a27378da">
-      <input type="hidden" name="subject" value="Kouのポートフォリオからのメッセージ">
-      <input type="hidden" name="redirect" value="https://KouYanagi.github.io/portfolio/thanks.html">
-      <input type="email" name="email" placeholder="Your Email" required aria-label="メールアドレス">
-      <textarea name="message" placeholder="Your Message" required aria-label="メッセージ"></textarea>
-      <input type="text" name="h-captcha-response" style="display:none">
-      <button type="submit">送信</button>
-    </form>
-    <!-- Formspree（復旧用：コメントアウト、必要なら切り替え） -->
-    <!--
-    <form action="https://formspree.io/f/mbjqjrdl" method="POST" class="contact-form">
-      <input type="email" name="email" placeholder="Your Email" required aria-label="メールアドレス">
-      <textarea name="message" placeholder="Your Message" required aria-label="メッセージ"></textarea>
-      <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="_next" value="/portfolio/thanks.html">
-      <input type="hidden" name="_replyto" value="{email}">
-      <input type="hidden" name="_subject" value="Kouのポートフォリオからのメッセージ">
-      <button type="submit">送信</button>
-    </form>
-    -->
-    <div class="contact-links">
-      <a href="mailto:kou1997y0211@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> kou1997y0211@gmail.com</a>
-      <a href="https://github.com/KouYanagi" target="_blank" class="contact-button"><i class="fab fa-github"></i> github.com/KouYanagi</a>
-      <a href="https://x.com/Sakiux_Valinox" target="_blank" class="contact-button"><i class="fab fa-x-twitter"></i> @Sakiux_Valinox</a>
-    </div>
-  </section>
-
-  <!-- フッター -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p>© 2025 Kou. All rights reserved. Images from <a href="https://pexels.com">Pexels</a> and <a href="https://unsplash.com">Unsplash</a>.</p>
-      <div class="footer-links">
-        <a href="mailto:kou1997y0211@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://github.com/KouYanagi" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://x.com/Sakiux_Valinox" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
+    <section id="projects">
+      <h2>プロジェクト</h2>
+      <div class="filter-buttons">
+        <button onclick="filterProjects('all')">すべて</button>
+        <button onclick="filterProjects('web')">Web開発</button>
+        <button onclick="filterProjects('design')">デザイン</button>
       </div>
-    </div>
+      <div class="project-gallery">
+        <div class="project-item" data-category="web">
+          <img src="images/ec-site.jpg" alt="小売向けECサイトのモックアップ">
+          <div class="project-content">
+            <h3>小売向けECサイト</h3>
+            <p>コンセプト：SEOと直感的なUIで売上を加速。訪問者数30%増を想定。</p>
+          </div>
+        </div>
+        <div class="project-item" data-category="design">
+          <img src="images/edu-platform.jpg" alt="教育プラットフォームのモックアップ">
+          <div class="project-content">
+            <h3>教育プラットフォーム</h3>
+            <p>コンセプト：インタラクティブなUIで学習を強化。学習時間20%向上を想定。</p>
+          </div>
+        </div>
+        <div class="project-item" data-category="web">
+          <img src="images/nonprofit.jpg" alt="非営利キャンペーンサイトのモックアップ">
+          <div class="project-content">
+            <h3>非営利キャンペーンサイト</h3>
+            <p>コンセプト：ストーリーテリングで寄付を促進。寄付率15%増を想定。</p>
+          </div>
+        </div>
+        <div class="project-item" data-category="web">
+          <img src="images/todo-app.jpg" alt="ToDoアプリのモックアップ">
+          <div class="project-content">
+            <h3>ToDoアプリ</h3>
+            <p>学習プロジェクト：JavaScriptでタスク管理を効率化。API統合を習得。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>自己紹介</h2>
+      <img src="images/profile-art.png" alt="Sakiuxのファンタジーキャラクターアート、白髪と青い目のデザイン">
+      <p>はじめまして、Sakiuxです。Web開発を通じて、クライアントの課題を解決することに情熱を注いでいます。ファイナルファンタジーXIVのストーリーテリングから学んだ、ユーザーを引き込む体験の大切さを、貴社のプロジェクトに活かします。このアートは私のクリエイティブな一面を表現しています。</p>
+    </section>
+
+    <section id="experience">
+      <h2>インスピレーションと経験</h2>
+      <div class="experience-container">
+        <div class="experience-item">
+          <img src="images/inspiration.jpg" alt="FFXIV風の抽象的な光のビジュアル">
+          <h3>インスピレーション</h3>
+          <p>ファイナルファンタジーXIVのストーリーテリングから、ユーザーを引き込むWeb体験の重要性を学びました。モダンなミニマリズムと機能美を追求し、クライアントのビジョンを視覚化します。</p>
+        </div>
+        <div class="experience-item">
+          <img src="images/experience.jpg" alt="コードとテストレポートのモックアップ">
+          <h3>経験</h3>
+          <p>8年間のテスト経験（UI/機能テスト）で、100以上のWebアプリの品質を向上。フリーランスとしてHTML, CSS, JavaScriptを活用したプロジェクトを展開し、ReactやWordPressを学びながら成長中です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>貴社の業界に合わせた最適なソリューションを提案します。</p>
+      <select id="industry-selector">
+        <option value="general">業界を選択</option>
+        <option value="retail">小売</option>
+        <option value="it">IT</option>
+        <option value="education">教育</option>
+        <option value="healthcare">ヘルスケア</option>
+        <option value="nonprofit">非営利</option>
+      </select>
+      <p id="cta-message">貴社のビジョンをWebで実現しましょう！</p>
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScWReF8efeMStm0hZw-VOP-_WcseeXmHEtcWVZHbVNj344aMQ/viewform?embedded=true" width="640" height="800" frameborder="0">読み込み中...</iframe>
+      </div>
+      <a href="portfolio.pdf" download class="btn">ポートフォリオPDF</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sakiux Valinox</p>
+    <a href="https://twitter.com/KouYanagi1997">X</a>
+    <a href="https://twitter.com/intent/tweet?text=洗練されたポートフォリオ！Web開発案件募集中！&url=https://yourportfolio.com" class="btn">Xでシェア</a>
   </footer>
 
   <script src="script.js"></script>

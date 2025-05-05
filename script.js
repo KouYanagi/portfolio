@@ -1,81 +1,68 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.section');
-    const cards = document.querySelectorAll('.project-card, .skills-list li, .experience-list li, .slider-item');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-  
-    sections.forEach(section => {
-      section.classList.add('fade-in');
-      observer.observe(section);
-    });
-  
-    cards.forEach(card => {
-      card.classList.add('fade-in');
-      observer.observe(card);
-    });
-  
-    // ナビゲーショントグル
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-    navbarToggle.addEventListener('click', () => {
-      navbarMenu.classList.toggle('active');
-    });
-  
-    // スムーズスクロール
-    document.querySelectorAll('.navbar-menu a').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = anchor.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        navbarMenu.classList.remove('active');
-      });
-    });
-  
-    // テーマ切り替え
-    const themeToggle = document.querySelector('.theme-toggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-      themeToggle.setAttribute('aria-label', isLight ? 'ダークモードに切り替え' : 'ライトモードに切り替え');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      themeToggle.setAttribute('aria-label', 'ダークモードに切り替え');
-    }
-  
-    // フォーム送信（Web3Formsは標準送信、Formspree用にログ保持）
-    const form = document.querySelector('.contact-form');
-    form.addEventListener('submit', (e) => {
-      alert('メッセージを送信中...');
-      console.log('Form submitted to:', form.action);
-      form.submit();
-    });
-  
-    // ヒーローCTAボタンのホバーアニメーション
-    const ctaButton = document.querySelector('.cta-button');
-    ctaButton.addEventListener('mouseover', () => {
-      ctaButton.style.boxShadow = '0 0 10px var(--accent-color)';
-    });
-    ctaButton.addEventListener('mouseout', () => {
-      ctaButton.style.boxShadow = 'none';
-    });
-  
-    // コンタクトボタンとフッターリンクのホバーアニメーション
-    const buttons = document.querySelectorAll('.contact-button, .footer-links a');
-    buttons.forEach(button => {
-      button.addEventListener('mouseover', () => {
-        button.style.boxShadow = '0 0 10px var(--accent-color)';
-      });
-      button.addEventListener('mouseout', () => {
-        button.style.boxShadow = 'none';
-      });
-    });
+// script.js
+
+// スムーズスクロール
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+});
+
+// プロジェクトフィルタ
+function filterProjects(category) {
+  const items = document.querySelectorAll('.project-item');
+  items.forEach(item => {
+    if (category === 'all' || item.dataset.category === category) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+};
+
+// 業界選択CTA
+document.getElementById('industry-selector').addEventListener('change', (e) => {
+  const industry = e.target.value;
+  const ctaMessage = document.getElementById('cta-message');
+  switch (industry) {
+    case 'retail':
+      ctaMessage.textContent = '売上を加速するECサイトを構築します！';
+      break;
+    case 'it':
+      ctaMessage.textContent = 'データ管理を最適化するダッシュボードを提供します！';
+      break;
+    case 'education':
+      ctaMessage.textContent = '学びを深めるeラーニングUIをデザインします！';
+      break;
+    case 'healthcare':
+      ctaMessage.textContent = '患者体験を向上するヘルスケアWebを構築します！';
+      break;
+    case 'nonprofit':
+      ctaMessage.textContent = '使命を広めるインパクトあるサイトを作成します！';
+      break;
+    default:
+      ctaMessage.textContent = '貴社のビジョンをWebで実現しましょう！';
+  }
+});
+
+// テーマ切り替え
+const toggleButton = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const icon = toggleButton.querySelector('.icon');
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('theme', theme);
+}
+
+toggleButton.addEventListener('click', () => {
+  const currentTheme = html.getAttribute('data-theme') || 'light';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  setTheme(newTheme);
+});
+
+// 初期テーマ設定
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
