@@ -1,4 +1,4 @@
-/* styles.css */
+/* テーマごとのカスタムプロパティ */
 :root {
     --primary: #1E3A8A;
     --secondary: #FFF7ED;
@@ -8,9 +8,16 @@
     --white: rgba(255, 255, 255, 0.95);
     --gradient: radial-gradient(circle, #FFF7ED, #E6E6FA);
     --shadow: rgba(0, 0, 0, 0.05);
-  }
-  
-  [data-theme="dark"] {
+    --project-bg: #f5f5f5;
+    --project-card-bg: #fff;
+    --project-text: #333;
+    --project-subtext: #666;
+    --project-accent: #007bff;
+    --project-hover-shadow: rgba(0, 123, 255, 0.2);
+    --ff14-gradient: linear-gradient(135deg, #e6f0fa, #b3cde0); /* 淡いクリスタル */
+   }
+   
+   [data-theme="dark"] {
     --primary: #D1D5DB;
     --secondary: #1F2937;
     --accent1: #D4A017;
@@ -19,63 +26,72 @@
     --white: rgba(31, 41, 55, 0.95);
     --gradient: radial-gradient(circle, #374151, #1F2937);
     --shadow: rgba(255, 255, 255, 0.1);
-  }
-  
-  * {
+    --project-bg: #1a1a1a;
+    --project-card-bg: #2a2a2a;
+    --project-text: #fff;
+    --project-subtext: #ccc;
+    --project-accent: #00f7ff; /* ネオン青 */
+    --project-hover-shadow: rgba(0, 255, 255, 0.2);
+    --ff14-gradient: linear-gradient(135deg, #00f7ff, #8a2be2); /* クリスタル風 */
+   }
+   
+   /* リセットと基本スタイル */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all 0.3s ease;
-  }
-  
-  body {
+   }
+   
+   body {
     font-family: 'Inter', sans-serif;
     background: var(--gradient);
     color: var(--text);
     line-height: 1.8;
     letter-spacing: 0.03em;
     font-size: 1rem;
-  }
-  
-  header {
+   }
+   
+   /* ヘッダー */
+   header {
     background: var(--white);
     padding: 1.5rem;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 8px var(--shadow);
-  }
-  
-  nav ul {
+   }
+   
+   nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-  }
-  
-  nav ul li {
+   }
+   
+   nav ul li {
     margin: 0 2rem;
-  }
-  
-  nav ul li a {
+   }
+   
+   nav ul li a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
     transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover,
-  nav ul li a:focus {
+   }
+   
+   nav ul li a:hover,
+   nav ul li a:focus {
     color: var(--accent1);
-  }
-  
-  .theme-toggle {
+   }
+   
+   .theme-toggle {
     position: absolute;
     right: 2rem;
     top: 1.5rem;
-  }
-  
-  #theme-toggle {
+   }
+   
+   #theme-toggle {
     background: var(--primary);
     color: var(--white);
     border: none;
@@ -84,18 +100,19 @@
     cursor: pointer;
     font-size: 1.2rem;
     transition: background 0.3s, transform 0.3s;
-  }
-  
-  #theme-toggle:hover {
+   }
+   
+   #theme-toggle:hover {
     transform: scale(1.1);
     background: var(--accent1);
-  }
-  
-  main {
+   }
+   
+   /* メイン */
+   main {
     display: block;
-  }
-  
-  section {
+   }
+   
+   section {
     padding: 7rem 2rem;
     max-width: 1100px;
     margin: 2rem auto;
@@ -104,30 +121,30 @@
     box-shadow: 0 8px 16px var(--shadow);
     text-align: center;
     display: block;
-  }
-  
-  h1, h2, h3 {
+   }
+   
+   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     color: var(--primary);
-  }
-  
-  h1 {
+   }
+   
+   h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     position: relative;
-  }
-  
-  h2 {
+   }
+   
+   h2 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
-  }
-  
-  h3 {
+   }
+   
+   h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-  }
-  
-  h1::after, h2::after {
+   }
+   
+   h1::after, h2::after {
     content: '';
     position: absolute;
     bottom: -8px;
@@ -136,37 +153,38 @@
     width: 40px;
     height: 2px;
     background: var(--accent1);
-  }
-  
-  #home {
+   }
+   
+   /* ホームセクション */
+   #home {
     padding: 0;
     background: none;
     box-shadow: none;
-  }
-  
-  .hero-image {
+   }
+   
+   .hero-image {
     position: relative;
     height: 600px;
     overflow: hidden;
-  }
-  
-  .hero-image img {
+   }
+   
+   .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-  
-  .hero-content {
+   }
+   
+   .hero-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: var(--white);
-  }
-  
-  .hero-content::before {
+   }
+   
+   .hero-content::before {
     content: '';
     position: absolute;
     top: 0;
@@ -175,63 +193,65 @@
     height: 100%;
     background: rgba(30, 58, 138, 0.75);
     z-index: -1;
-  }
-  
-  [data-theme="dark"] .hero-content::before {
+   }
+   
+   [data-theme="dark"] .hero-content::before {
     background: rgba(209, 213, 219, 0.75);
-  }
-  
-  #home h1 {
+   }
+   
+   #home h1 {
     font-size: 3.2rem;
     margin-bottom: 1rem;
     color: #FFFFFF;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: 700;
-  }
-  
-  [data-theme="dark"] #home h1 {
+   }
+   
+   [data-theme="dark"] #home h1 {
     color: var(--accent1);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  #home p {
+   }
+   
+   #home p {
     font-size: 1.3rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-  }
-  
-  .btn {
+   }
+   
+   .btn {
     display: inline-block;
     background: var(--primary);
     color: var(--white);
+    position: relative;
     padding: 0.75rem 2rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  }
-  
-  .btn:hover,
-  .btn:focus {
+   }
+   
+   .btn:hover,
+   .btn:focus {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px var(--shadow);
     background: var(--accent1);
-  }
-  
-  .skill-container {
+   }
+   
+   /* スキルセクション */
+   .skill-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
-  }
-  
-  .skill-container.testing {
+   }
+   
+   .skill-container.testing {
     grid-template-columns: 1fr;
     max-width: 300px;
     margin: 1.5rem auto;
-  }
-  
-  .skill-item {
+   }
+   
+   .skill-item {
     background: var(--white);
     padding: 1.5rem;
     border-radius: 8px;
@@ -239,26 +259,26 @@
     text-align: center;
     position: relative;
     transition: box-shadow 0.3s, filter 0.3s;
-  }
-  
-  .skill-item:hover {
+   }
+   
+   .skill-item:hover {
     box-shadow: 0 8px 16px var(--shadow);
     filter: brightness(1.05);
-  }
-  
-  .skill-item img {
+   }
+   
+   .skill-item img {
     width: 50px;
     height: 50px;
     margin-bottom: 0.5rem;
     filter: drop-shadow(0 2px 4px var(--shadow));
-  }
-  
-  .skill-item p {
+   }
+   
+   .skill-item p {
     font-weight: 500;
     font-size: 0.9rem;
-  }
-  
-  .skill-detail {
+   }
+   
+   .skill-detail {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -272,67 +292,136 @@
     transition: opacity 0.3s;
     width: max-content;
     max-width: 200px;
-  }
-  
-  .skill-item:hover .skill-detail {
+   }
+   
+   .skill-item:hover .skill-detail {
     opacity: 1;
-  }
-  
-  .skill-container.learning .skill-item {
+   }
+   
+   .skill-container.learning .skill-item {
     background: rgba(229, 115, 115, 0.1);
-  }
-  
-  .project-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    margin-top: 2rem;
-  }
-  
-  .project-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background: var(--white);
-    padding: 1.5rem;
+   }
+   
+   /* プロジェクトセクション */
+   .project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: var(--project-bg);
+   }
+   
+   .project-item {
+    background: var(--project-card-bg);
     border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow);
-    transition: box-shadow 0.3s, filter 0.3s;
-  }
-  
-  .project-item:hover {
-    box-shadow: 0 8px 16px var(--shadow);
-    filter: brightness(1.05);
-  }
-  
-  .project-item img {
-    width: 40%;
-    height: 180px;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow);
+   }
+   
+   .project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--project-hover-shadow);
+   }
+   
+   .project-item img {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px var(--shadow);
-  }
-  
-  .project-content {
-    flex: 1;
-    text-align: left;
-  }
-  
-  .project-content h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--primary);
-  }
-  
-  .experience-container {
+   }
+   
+   .project-content {
+    padding: 15px;
+    color: var(--project-text);
+   }
+   
+   .project-content h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--project-accent);
+   }
+   
+   .project-content p {
+    margin: 0;
+    font-size: 1em;
+    color: var(--project-subtext);
+   }
+   
+   /* FF14趣味サイトのクリスタル風デザイン */
+   .project-item.ff14-project {
+    position: relative;
+   }
+   
+   .project-item.ff14-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--ff14-gradient);
+    opacity: 0.1;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+   }
+   
+   .project-item.ff14-project:hover::before {
+    opacity: 0.2;
+   }
+   
+   .project-item.ff14-project .project-content h3 {
+    background: var(--ff14-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
+   
+   /* フィルターボタン */
+   .filter-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+    background: var(--project-bg);
+   }
+   
+   .filter-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--project-card-bg);
+    color: var(--project-text);
+    cursor: pointer;
+    transition: background 0.3s;
+   }
+   
+   .filter-buttons button:hover {
+    background: var(--project-accent);
+    color: var(--project-bg);
+   }
+   
+   /* 非表示アニメーション */
+   .project-item[style*="display: none"] {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+   }
+   
+   .project-item[style*="display: block"] {
+    opacity: 1;
+    height: auto;
+   }
+   
+   /* その他のセクション */
+   .experience-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
     justify-content: center;
-  }
-  
-  .experience-item {
+   }
+   
+   .experience-item {
     flex: 1;
     min-width: 300px;
     background: var(--white);
@@ -340,14 +429,14 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--shadow);
     transition: box-shadow 0.3s, filter 0.3s;
-  }
-  
-  .experience-item:hover {
+   }
+   
+   .experience-item:hover {
     box-shadow: 0 8px 16px var(--shadow);
     filter: brightness(1.05);
-  }
-  
-  .experience-item img {
+   }
+   
+   .experience-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -355,16 +444,16 @@
     border: 1px solid var(--accent1);
     box-shadow: 0 4px 8px var(--shadow);
     margin-bottom: 1rem;
-  }
-  
-  .experience-item h3 {
+   }
+   
+   .experience-item h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--primary);
     margin-bottom: 1rem;
-  }
-  
-  #about img {
+   }
+   
+   #about img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -372,14 +461,14 @@
     box-shadow: 0 4px 12px var(--shadow);
     margin: 1.5rem auto;
     object-fit: cover;
-  }
-  
-  #about p {
+   }
+   
+   #about p {
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  #industry-selector {
+   }
+   
+   #industry-selector {
     padding: 0.75rem;
     border-radius: 8px;
     border: 1px solid var(--primary);
@@ -387,108 +476,114 @@
     max-width: 300px;
     display: block;
     font-size: 1rem;
-    background: var(--white);
-    color: var(--text);
-  }
-  
-  #cta-message {
+    background: var(--project-card-bg);
+    color: var(--project-text);
+   }
+   
+   #cta-message {
     font-weight: 500;
-    color: var(--primary);
+    color: var(--project-accent);
     margin-bottom: 2rem;
     font-size: 1.1rem;
-  }
-  
-  .form-container {
+   }
+   
+   .form-container {
     background: var(--white);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 8px var(--shadow);
     max-width: 700px;
     margin: 2rem auto;
-  }
-  
-  footer {
+   }
+   
+   /* フッター */
+   footer {
     background: var(--primary);
     color: var(--white);
     text-align: center;
     padding: 2rem;
-  }
-  
-  footer a {
+   }
+   
+   footer a {
     color: var(--white);
     margin: 0 1rem;
     text-decoration: none;
     transition: color 0.3s;
-  }
-  
-  footer a:hover,
-  footer a:focus {
+   }
+   
+   footer a:hover,
+   footer a:focus {
     color: var(--accent1);
-  }
-  
-  @media (max-width: 768px) {
+   }
+   
+   /* レスポンシブ */
+   @media (max-width: 768px) {
     .hero-image {
-      height: 400px;
+    height: 400px;
     }
-  
+   
     #home h1 {
-      font-size: 2.2rem;
+    font-size: 2.2rem;
     }
-  
+   
     #home p {
-      font-size: 1.1rem;
+    font-size: 1.1rem;
     }
-  
+   
     h1 {
-      font-size: 2rem;
+    font-size: 2rem;
     }
-  
+   
     h2 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
     }
-  
+   
     nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
     }
-  
+   
     nav ul li {
-      margin: 0.5rem 0;
+    margin: 0.5rem 0;
     }
-  
+   
     .theme-toggle {
-      right: 1rem;
-      top: 1rem;
+    right: 1rem;
+    top: 1rem;
     }
-  
+   
     section {
-      padding: 4rem 1rem;
-      margin: 1rem;
+    padding: 4rem 1rem;
+    margin: 1rem;
     }
-  
+   
     .skill-container {
-      gap: 1.5rem;
+    gap: 1.5rem;
     }
-  
+   
     .project-item {
-      flex-direction: column;
+    flex-direction: column;
     }
-  
+   
+    .project-item a {
+    flex-direction: column;
+    }
+   
     .project-item img {
-      width: 100%;
+    width: 100%;
     }
-  
+   
     .project-content {
-      text-align: center;
+    text-align: center;
     }
-  
+   
     .experience-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
     }
-  }
-  
-  :focus {
+   }
+   
+   :focus {
     outline: 2px solid var(--accent1);
     outline-offset: 2px;
-  }
+   }

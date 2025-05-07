@@ -1,5 +1,3 @@
-// script.js
-
 // スムーズスクロール
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
@@ -9,37 +7,46 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// プロジェクトフィルタ
-function filterProjects(category) {
-  const items = document.querySelectorAll('.project-item');
-  items.forEach(item => {
-    if (category === 'all' || item.dataset.category === category) {
-      item.style.display = 'flex';
+// プロジェクトフィルタリング
+function filterProjects(tech) {
+  const projects = document.querySelectorAll('.project-item');
+  
+  projects.forEach(project => {
+    const techList = project.getAttribute('data-tech').split(' ');
+    
+    if (tech === 'all' || techList.includes(tech)) {
+      project.style.display = 'block';
     } else {
-      item.style.display = 'none';
+      project.style.display = 'none';
     }
   });
-};
+}
 
-// 業界選択CTA
+// 問い合わせオプションのCTA
 document.getElementById('industry-selector').addEventListener('change', (e) => {
   const industry = e.target.value;
   const ctaMessage = document.getElementById('cta-message');
   switch (industry) {
-    case 'retail':
-      ctaMessage.textContent = '売上を加速するECサイトを構築します！';
+    case 'corporate':
+      ctaMessage.textContent = '企業ブランディングを強化する公式サイトを構築します！';
       break;
-    case 'it':
-      ctaMessage.textContent = 'データ管理を最適化するダッシュボードを提供します！';
+    case 'personal':
+      ctaMessage.textContent = '個人ブランディングを輝かせるプロフィールサイトを作成します！';
+      break;
+    case 'beauty':
+      ctaMessage.textContent = '美容業界の魅力を引き出す予約サイトをデザインします！';
+      break;
+    case 'edu-promo':
+      ctaMessage.textContent = '教育プロモーションを加速するバナーやLPを制作します！';
       break;
     case 'education':
-      ctaMessage.textContent = '学びを深めるeラーニングUIをデザインします！';
+      ctaMessage.textContent = '教育機関の情報を魅力的に伝えるWebサイトを構築します！';
       break;
-    case 'healthcare':
-      ctaMessage.textContent = '患者体験を向上するヘルスケアWebを構築します！';
+    case 'restaurant':
+      ctaMessage.textContent = '飲食業界の来店を促進する魅力的なHPを制作します！';
       break;
-    case 'nonprofit':
-      ctaMessage.textContent = '使命を広めるインパクトあるサイトを作成します！';
+    case 'creative':
+      ctaMessage.textContent = 'クリエイティブなデザインで個性を輝かせるサイトを構築します！';
       break;
     default:
       ctaMessage.textContent = '貴社のビジョンをWebで実現しましょう！';
@@ -66,3 +73,12 @@ toggleButton.addEventListener('click', () => {
 // 初期テーマ設定
 const savedTheme = localStorage.getItem('theme') || 'light';
 setTheme(savedTheme);
+
+// プロジェクトリンクの準備中アラート
+document.querySelectorAll('.project-item a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const projectTitle = link.querySelector('h3').textContent;
+    alert(`${projectTitle}のサイトは現在準備中です。詳細はお問い合わせください！`);
+  });
+});
