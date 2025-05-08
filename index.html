@@ -9,11 +9,12 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=19">
+    <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
     <header>
-        <nav>
+        <button class="hamburger" aria-label="メニューを開く">☰</button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="#home">ホーム</a></li>
                 <li><a href="#skills">スキル</a></li>
@@ -33,7 +34,7 @@
     <main>
         <section id="home">
             <div class="hero-image">
-                <img src="images/hero.jpg" alt="モダンなWebインターフェースのヒーロー画像">
+                <img src="images/hero.webp" alt="モダンなWebインターフェースのヒーロー画像" loading="lazy">
                 <div class="hero-content">
                     <h1>Kou Yanagi</h1>
                     <p>洗練されたWeb体験で、貴社のビジョンを次のレベルへ。</p>
@@ -47,47 +48,47 @@
             <h3>熟練スキル</h3>
             <div class="skill-container">
                 <div class="skill-item" data-skill="html">
-                    <img src="images/html.png" alt="HTML5アイコン">
+                    <img src="images/html.png" alt="HTML5アイコン" loading="lazy">
                     <p>HTML5</p>
                     <div class="tooltip skill">セマンティックな構造でSEOを最適化</div>
                 </div>
                 <div class="skill-item" data-skill="css">
-                    <img src="images/css.png" alt="CSS3アイコン">
+                    <img src="images/css.png" alt="CSS3アイコン" loading="lazy">
                     <p>CSS3</p>
                     <div class="tooltip skill">レスポンシブデザインとアニメーション</div>
                 </div>
                 <div class="skill-item" data-skill="js">
-                    <img src="images/js.png" alt="JavaScriptアイコン">
+                    <img src="images/js.png" alt="JavaScriptアイコン" loading="lazy">
                     <p>JavaScript</p>
                     <div class="tooltip skill">DOM操作と非同期処理</div>
                 </div>
                 <div class="skill-item" data-skill="figma">
-                    <img src="images/figma.png" alt="Figmaアイコン">
+                    <img src="images/figma.png" alt="Figmaアイコン" loading="lazy">
                     <p>Figma</p>
                     <div class="tooltip skill">プロトタイピングとUIデザイン</div>
                 </div>
                 <div class="skill-item" data-skill="git">
-                    <img src="images/git.png" alt="Git/GitHubアイコン">
+                    <img src="images/git.png" alt="Git/GitHubアイコン" loading="lazy">
                     <p>Git/GitHub</p>
                     <div class="tooltip skill">バージョン管理とオープンソース</div>
                 </div>
                 <div class="skill-item" data-skill="vscode">
-                    <img src="images/vscode.png" alt="VS Codeアイコン">
+                    <img src="images/vscode.png" alt="VS Codeアイコン" loading="lazy">
                     <p>VS Code</p>
                     <div class="tooltip skill">効率的なコーディング環境</div>
                 </div>
                 <div class="skill-item" data-skill="canva">
-                    <img src="images/canva.png" alt="Canvaアイコン">
+                    <img src="images/canva.png" alt="Canvaアイコン" loading="lazy">
                     <p>Canva</p>
                     <div class="tooltip skill">広告バナーとビジュアルデザイン</div>
                 </div>
                 <div class="skill-item" data-skill="wix">
-                    <img src="images/wix.png" alt="Wixアイコン">
+                    <img src="images/wix.png" alt="Wixアイコン" loading="lazy">
                     <p>Wix</p>
                     <div class="tooltip skill">Webサイトとランディングページ</div>
                 </div>
                 <div class="skill-item" data-skill="jquery">
-                    <img src="images/jquery.png" alt="jQueryアイコン">
+                    <img src="images/jquery.png" alt="jQueryアイコン" loading="lazy">
                     <p>jQuery</p>
                     <div class="tooltip skill">動的UIと簡潔なDOM操作</div>
                 </div>
@@ -95,7 +96,7 @@
             <h3>テスト経験</h3>
             <div class="skill-container testing">
                 <div class="skill-item" data-skill="testing">
-                    <img src="images/testing.png" alt="テストアイコン">
+                    <img src="images/testing.png" alt="テストアイコン" loading="lazy">
                     <p>テスト経験</p>
                     <div class="tooltip skill">8年間のUI/機能テストでバグ削減</div>
                 </div>
@@ -103,27 +104,27 @@
             <h3>学習中スキル</h3>
             <div class="skill-container learning">
                 <div class="skill-item" data-skill="react">
-                    <img src="images/react.png" alt="Reactアイコン">
+                    <img src="images/react.png" alt="Reactアイコン" loading="lazy">
                     <p>React</p>
                     <div class="tooltip skill">コンポーネントベースのUIを学習中</div>
                 </div>
                 <div class="skill-item" data-skill="node">
-                    <img src="images/node.png" alt="Node.jsアイコン">
+                    <img src="images/node.png" alt="Node.jsアイコン" loading="lazy">
                     <p>Node.js</p>
                     <div class="tooltip skill">バックエンド開発の基礎を習得中</div>
                 </div>
                 <div class="skill-item" data-skill="uiux">
-                    <img src="images/uiux.png" alt="UI/UXアイコン">
+                    <img src="images/uiux.png" alt="UI/UXアイコン" loading="lazy">
                     <p>UI/UXデザイン</p>
                     <div class="tooltip skill">ユーザー中心設計を学習中</div>
                 </div>
                 <div class="skill-item" data-skill="wordpress">
-                    <img src="images/wordpress.png" alt="WordPressアイコン">
+                    <img src="images/wordpress.png" alt="WordPressアイコン" loading="lazy">
                     <p>WordPress</p>
                     <div class="tooltip skill">カスタムテーマ開発を学習中</div>
                 </div>
                 <div class="skill-item" data-skill="php">
-                    <img src="images/php.png" alt="PHPアイコン">
+                    <img src="images/php.png" alt="PHPアイコン" loading="lazy">
                     <p>PHP</p>
                     <div class="tooltip skill">WordPressバックエンド開発を学習中</div>
                 </div>
@@ -131,194 +132,193 @@
         </section>
 
         <section id="projects">
-          <h2>プロジェクト</h2>
-          <div class="filter-buttons">
-              <button onclick="filterProjects('all')" class="active">すべて</button>
-              <button onclick="filterProjects('html_css_js')">HTML/CSS/JavaScript</button>
-              <button onclick="filterProjects('html_css')">HTML/CSS</button>
-              <button onclick="filterProjects('wordpress')">WordPress</button>
-              <button onclick="filterProjects('canva')">Canva</button>
-              <button onclick="filterProjects('wix')">Wix</button>
-              <button onclick="filterProjects('jquery')">jQuery</button>
-          </div>
-          <div class="project-gallery">
-              <div class="project-item" data-tech="html_css_js">
-                  <a href="#" aria-label="コーポレートサイトの詳細（準備中）">
-                      <img src="images/corporate-site.jpg" alt="コーポレートサイトのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>コーポレートサイト</h3>
-                      <button class="details-btn" aria-label="コーポレートサイトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：中小企業向け公式サイト。信頼度15%向上を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3 / JavaScript</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="3">
-                          <div class="tech-badges">
-                              <img src="images/html.png" alt="HTML5アイコン" class="tech-badge">
-                              <img src="images/css.png" alt="CSS3アイコン" class="tech-badge">
-                              <img src="images/js.png" alt="JavaScriptアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item" data-tech="html_css">
-                  <a href="#" aria-label="プロフィールサイトの詳細（準備中）">
-                      <img src="images/profile-site.jpg" alt="プロフィールサイトのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>プロフィールサイト</h3>
-                      <button class="details-btn" aria-label="プロフィールサイトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：個人ブランディングを強化。引き合い10%増を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="2">
-                          <div class="tech-badges">
-                              <img src="images/html.png" alt="HTML5アイコン" class="tech-badge">
-                              <img src="images/css.png" alt="CSS3アイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item" data-tech="wordpress">
-                  <a href="#" aria-label="美容室のHPの詳細（準備中）">
-                      <img src="images/salon-site.jpg" alt="美容室のHPのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>美容室のHP</h3>
-                      <button class="details-btn" aria-label="美容室のHPの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：WordPressで予約とメニューを管理。エンゲージメント20%向上を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：WordPress / PHP</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="2">
-                          <div class="tech-badges">
-                              <img src="images/wordpress.png" alt="WordPressアイコン" class="tech-badge">
-                              <img src="images/php.png" alt="PHPアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item" data-tech="canva">
-                  <a href="#" aria-label="スクールのバナーの詳細（準備中）">
-                      <img src="images/school-banner.jpg" alt="スクールのバナーのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>スクールのバナー</h3>
-                      <button class="details-btn" aria-label="スクールのバナーの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：Canvaで高品質な広告バナー。クリック率15%向上を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：Canva</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="1">
-                          <div class="tech-badges">
-                              <img src="images/canva.png" alt="Canvaアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item" data-tech="wix">
-                  <a href="#" aria-label="スクールのLPの詳細（準備中）">
-                      <img src="images/school-lp.jpg" alt="スクールのLPのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>スクールのLP</h3>
-                      <button class="details-btn" aria-label="スクールのLPの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：Wixでコース登録を促進。登録率20%向上を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：Wix</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="1">
-                          <div class="tech-badges">
-                              <img src="images/wix.png" alt="Wixアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item" data-tech="wordpress">
-                  <a href="#" aria-label="大学のHPの詳細（準備中）">
-                      <img src="images/university-site.jpg" alt="大学のHPのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>大学のHP</h3>
-                      <button class="details-btn" aria-label="大学のHPの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：WordPressで学部とイベントを管理。エンゲージメント15%向上を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：WordPress / PHP</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="2">
-                          <div class="tech-badges">
-                              <img src="images/wordpress.png" alt="WordPressアイコン" class="tech-badge">
-                              <img src="images/php.png" alt="PHPアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item" data-tech="jquery html_css_js">
-                  <a href="#" aria-label="レストランのHPの詳細（準備中）">
-                      <img src="images/restaurant-site.jpg" alt="レストランのHPのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>レストランのHP</h3>
-                      <button class="details-btn" aria-label="レストランのHPの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：jQueryで動的なメニューと予約。来店率15%増を想定。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3 / JavaScript / jQuery</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="4">
-                          <div class="tech-badges">
-                              <img src="images/html.png" alt="HTML5アイコン" class="tech-badge">
-                              <img src="images/css.png" alt="CSS3アイコン" class="tech-badge">
-                              <img src="images/js.png" alt="JavaScriptアイコン" class="tech-badge">
-                              <img src="images/jquery.png" alt="jQueryアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="project-item ff14-project" data-tech="html_css_js">
-                  <a href="#" aria-label="FF14自己紹介&ギャラリーの詳細（準備中）">
-                      <img src="images/ff14-site.jpg" alt="FF14自己紹介&ギャラリーのモックアップ">
-                  </a>
-                  <div class="project-content">
-                      <h3 data-fulltext>FF14自己紹介&ギャラリー</h3>
-                      <button class="details-btn" aria-label="FF14自己紹介&ギャラリーの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p data-fulltext>コンセプト：個人レベルの趣味サイト。クリエイティブなデザインを展示。</p>
-                      <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3 / JavaScript</p>
-                      <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
-                      <div class="tech-badges-container" data-badge-count="3">
-                          <div class="tech-badges">
-                              <img src="images/html.png" alt="HTML5アイコン" class="tech-badge">
-                              <img src="images/css.png" alt="CSS3アイコン" class="tech-badge">
-                              <img src="images/js.png" alt="JavaScriptアイコン" class="tech-badge">
-                          </div>
-                          <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
-                          <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
+            <h2>プロジェクト</h2>
+            <div class="filter-buttons">
+                <button onclick="filterProjects('all')" class="active">すべて</button>
+                <button onclick="filterProjects('html_css_js')">HTML/CSS/JavaScript</button>
+                <button onclick="filterProjects('html_css')">HTML/CSS</button>
+                <button onclick="filterProjects('wordpress')">WordPress</button>
+                <button onclick="filterProjects('canva')">Canva</button>
+                <button onclick="filterProjects('wix')">Wix</button>
+                <button onclick="filterProjects('jquery')">jQuery</button>
+            </div>
+            <div class="project-gallery">
+                <div class="project-item" data-tech="html_css_js">
+                    <a href="#" aria-label="コーポレートサイトの詳細（準備中）">
+                        <img src="images/corporate-site.webp" alt="コーポレートサイトのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>コーポレートサイト</h3>
+                        <button class="details-btn" aria-label="コーポレートサイトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：中小企業向け公式サイト。信頼度15%向上を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3 / JavaScript</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="3">
+                            <div class="tech-badges">
+                                <img src="images/html.png" alt="HTML5アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/css.png" alt="CSS3アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/js.png" alt="JavaScriptアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-tech="html_css">
+                    <a href="#" aria-label="プロフィールサイトの詳細（準備中）">
+                        <img src="images/profile-site.webp" alt="プロフィールサイトのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>プロフィールサイト</h3>
+                        <button class="details-btn" aria-label="プロフィールサイトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：個人ブランディングを強化。引き合い10%増を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="2">
+                            <div class="tech-badges">
+                                <img src="images/html.png" alt="HTML5アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/css.png" alt="CSS3アイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-tech="wordpress">
+                    <a href="#" aria-label="美容室のHPの詳細（準備中）">
+                        <img src="images/salon-site.webp" alt="美容室のHPのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>美容室のHP</h3>
+                        <button class="details-btn" aria-label="美容室のHPの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：WordPressで予約とメニューを管理。エンゲージメント20%向上を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：WordPress / PHP</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="2">
+                            <div class="tech-badges">
+                                <img src="images/wordpress.png" alt="WordPressアイコン" class="tech-badge" loading="lazy">
+                                <img src="images/php.png" alt="PHPアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-tech="canva">
+                    <a href="#" aria-label="スクールのバナーの詳細（準備中）">
+                        <img src="images/school-banner.webp" alt="スクールのバナーのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>スクールのバナー</h3>
+                        <button class="details-btn" aria-label="スクールのバナーの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：Canvaで高品質な広告バナー。クリック率15%向上を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：Canva</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="1">
+                            <div class="tech-badges">
+                                <img src="images/canva.png" alt="Canvaアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-tech="wix">
+                    <a href="#" aria-label="スクールのLPの詳細（準備中）">
+                        <img src="images/school-lp.webp" alt="スクールのLPのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>スクールのLP</h3>
+                        <button class="details-btn" aria-label="スクールのLPの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：Wixでコース登録を促進。登録率20%向上を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：Wix</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="1">
+                            <div class="tech-badges">
+                                <img src="images/wix.png" alt="Wixアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-tech="wordpress">
+                    <a href="#" aria-label="大学のHPの詳細（準備中）">
+                        <img src="images/university-site.webp" alt="大学のHPのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>大学のHP</h3>
+                        <button class="details-btn" aria-label="大学のHPの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：WordPressで学部とイベントを管理。エンゲージメント15%向上を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：WordPress / PHP</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="2">
+                            <div class="tech-badges">
+                                <img src="images/wordpress.png" alt="WordPressアイコン" class="tech-badge" loading="lazy">
+                                <img src="images/php.png" alt="PHPアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item" data-tech="jquery html_css_js">
+                    <a href="#" aria-label="レストランのHPの詳細（準備中）">
+                        <img src="images/restaurant-site.webp" alt="レストランのHPのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>レストランのHP</h3>
+                        <button class="details-btn" aria-label="レストランのHPの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：jQueryで動的なメニューと予約。来店率15%増を想定。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3 / JavaScript / jQuery</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="4">
+                            <div class="tech-badges">
+                                <img src="images/html.png" alt="HTML5アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/css.png" alt="CSS3アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/js.png" alt="JavaScriptアイコン" class="tech-badge" loading="lazy">
+                                <img src="images/jquery.png" alt="jQueryアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item ff14-project" data-tech="html_css_js">
+                    <a href="#" aria-label="FF14自己紹介&ギャラリーの詳細（準備中）">
+                        <img src="images/ff14-site.webp" alt="FF14自己紹介&ギャラリーのモックアップ" loading="lazy">
+                    </a>
+                    <div class="project-content">
+                        <h3 data-fulltext>FF14自己紹介&ギャラリー</h3>
+                        <button class="details-btn" aria-label="FF14自己紹介&ギャラリーの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p data-fulltext>コンセプト：個人レベルの趣味サイト。クリエイティブなデザインを展示。</p>
+                        <button class="details-btn" aria-label="コンセプトの詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <p class="tech-stack" data-fulltext>使用技術：HTML5 / CSS3 / JavaScript</p>
+                        <button class="details-btn" aria-label="使用技術の詳細を展開" aria-expanded="false">詳細を見る</button>
+                        <div class="tech-badges-container" data-badge-count="3">
+                            <div class="tech-badges">
+                                <img src="images/html.png" alt="HTML5アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/css.png" alt="CSS3アイコン" class="tech-badge" loading="lazy">
+                                <img src="images/js.png" alt="JavaScriptアイコン" class="tech-badge" loading="lazy">
+                            </div>
+                            <button class="scroll-left" aria-label="左にスクロール" tabindex="0">◄</button>
+                            <button class="scroll-right" aria-label="右にスクロール" tabindex="0">►</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="about">
             <h2>自己紹介</h2>
-            <img src="images/profile-art.png" alt="Kouのイメージアート">
+            <img src="images/profile-art.webp" alt="Kouのイメージアート" loading="lazy">
             <p>はじめまして、Kouと申します。</p>
             <p>Web開発を通じて、クライアント様の課題解決に情熱を注いでいます。<br>貴社のビジョンやニーズに深く寄り添い、ユーザーを引き込む提案を積極的に行います。</p>
             <p>品質とユーザー体験を重視し、製造分野でもスキルを磨きながら、信頼性の高いソリューションを提供します。</p>
@@ -330,12 +330,12 @@
             <h2>インスピレーションと経験</h2>
             <div class="experience-container">
                 <div class="experience-item">
-                    <img src="images/inspiration.jpg" alt="FFXIVの公式バナー">
+                    <img src="images/inspiration.webp" alt="FFXIVの公式バナー" loading="lazy">
                     <h3>インスピレーション</h3>
                     <p>『ファイナルファンタジーXIV』のストーリーテリングから、ユーザーを引き込むWeb体験の重要性を学びました。<br>モダンなミニマリズムと機能美を追求し、クライアントのビジョンを魅力的に視覚化します。</p>
                 </div>
                 <div class="experience-item">
-                    <img src="images/experience.jpg" alt="コードとテストレポートのモックアップ">
+                    <img src="images/experience.webp" alt="コードとテストレポートのモックアップ" loading="lazy">
                     <h3>経験</h3>
                     <p>8年間のUI/機能テストを通じて、50を超えるWebアプリの品質を高めてきました。<br>HTML, CSS, JavaScriptを駆使した開発に取り組み、ReactやWordPressを積極的に学びながら、製造分野でもスキルを磨いています。</p>
                 </div>
@@ -343,24 +343,33 @@
         </section>
 
         <section id="contact">
-            <h2>お問い合わせ</h2>
-            <p>プロジェクトに合わせた最適なWebソリューションを提案します。</p>
-            <select id="industry-selector" aria-label="ご相談内容を選択">
-                <option value="general">ご相談内容を選択</option>
-                <option value="corporate">企業ブランディング</option>
-                <option value="personal">個人ブランディング</option>
-                <option value="beauty">美容業界</option>
-                <option value="edu-promo">教育プロモーション</option>
-                <option value="education">教育機関</option>
-                <option value="restaurant">飲食業界</option>
-                <option value="creative">クリエイティブデザイン</option>
-            </select>
-            <p id="cta-message">貴社のビジョンをWebで実現しましょう！</p>
-            <div class="form-container">
-                <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLScWReF8efeMStm0hZw-VOP-_WcseeXmHEtcWVZHbVNj344aMQ/viewform?embedded=true" width="100%" frameborder="0" scrolling="no" onload="resizeIframe(this)" onerror="this.style.display='none'; document.getElementById('form-error').style.display='block';">読み込み中...</iframe>
-                <p id="form-error" style="display:none; color: #d32f2f;">フォームの読み込みに失敗しました。後でもう一度お試しください。</p>
-            </div>
-        </section>
+          <h2>お問い合わせ</h2>
+          <p>プロジェクトに合わせた最適なWebソリューションを提案します。</p>
+          <select id="industry-selector" aria-label="ご相談内容を選択">
+              <option value="general">ご相談内容を選択</option>
+              <option value="corporate">企業ブランディング</option>
+              <option value="personal">個人ブランディング</option>
+              <option value="beauty">美容業界</option>
+              <option value="edu-promo">教育プロモーション</option>
+              <option value="education">教育機関</option>
+              <option value="restaurant">飲食業界</option>
+              <option value="creative">クリエイティブデザイン</option>
+          </select>
+          <p id="cta-message">貴社のビジョンをWebで実現しましょう！</p>
+          <div class="form-container">
+              <iframe id="contact-form" 
+                      src="https://docs.google.com/forms/d/e/1FAIpQLScWReF8efeMStm0hZw-VOP-_WcseeXmHEtcWVZHbVNj344aMQ/viewform?embedded=true" 
+                      width="100%" 
+                      frameborder="0" 
+                      scrolling="no" 
+                      onload="resizeIframe(this)" 
+                      onerror="handleIframeError(this)">読み込み中...</iframe>
+              <p id="form-error" style="display:none; color: #d32f2f;">
+                  フォームの読み込みに失敗しました。
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScWReF8efeMStm0hZw-VOP-_WcseeXmHEtcWVZHbVNj344aMQ/viewform" target="_blank">こちらから直接フォームにアクセス</a>してください。
+              </p>
+          </div>
+      </section>
     </main>
 
     <footer>

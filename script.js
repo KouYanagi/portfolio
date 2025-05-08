@@ -7,6 +7,11 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
+// ハンバーガーメニューのトグル
+document.querySelector('.hamburger').addEventListener('click', () => {
+  document.querySelector('.nav-menu').classList.toggle('active');
+});
+
 // プロジェクトフィルタリング
 function filterProjects(tech) {
   const projects = document.querySelectorAll('.project-item');
@@ -42,7 +47,7 @@ document.getElementById('industry-selector').addEventListener('change', e => {
       case 'education':
           ctaMessage.textContent = '教育機関の情報を魅力的に伝えるWebサイトを構築します！';
           break;
-      case 'Isrestaurant':
+      case 'restaurant':
           ctaMessage.textContent = '飲食業界の来店を促進する魅力的なHPを制作します！';
           break;
       case 'creative':
@@ -122,15 +127,11 @@ document.querySelectorAll('.tech-badges-container').forEach(container => {
 
 // テキスト展開とエリプシス判定
 function checkEllipsis(element) {
-  // 要素のスタイルを取得
   const style = window.getComputedStyle(element);
   const lineClamp = parseInt(style.getPropertyValue('-webkit-line-clamp')) || 2;
   const lineHeight = parseFloat(style.getPropertyValue('line-height')) || 1.5;
   const maxHeight = lineClamp * lineHeight * parseFloat(style.getPropertyValue('font-size'));
-
-  // 実際のコンテンツ高さと表示高さを比較
   const isEllipsis = element.scrollHeight > element.offsetHeight || element.scrollHeight > maxHeight;
-
   return isEllipsis;
 }
 
@@ -227,28 +228,72 @@ document.querySelectorAll('.skill-item').forEach(item => {
 
 // お問い合わせフォームのiframe高さ調整
 function resizeIframe(iframe) {
+  if (!iframe || !iframe.contentWindow) {
+      console.warn('iframeまたはcontentWindowが見つかりません');
+      handleIframeError(iframe);
+      return;
+  }
+
   iframe.style.height = 'auto';
+  const minHeight = window.innerWidth <= 480 ? 500 : window.innerWidth <= 768 ? 600 : 800;
+
   const adjustHeight = () => {
-      const contentHeight = iframe.contentWindow.document.body.scrollHeight;
-      iframe.style.height = `${contentHeight + 50}px`;
+      try {
+          // Googleフォーム特有のコンテンツ要素をターゲット
+          const formContent = iframe.contentWindow.document.querySelector('.freebirdFormviewerViewFormContent') || 
+                             iframe.contentWindow.document.body;
+          const contentHeight = formContent.scrollHeight || iframe.contentWindow.document.body.scrollHeight || minHeight;
+          const extraPadding = 100; // 余白を追加して非表示部分を防止
+          iframe.style.height = `${Math.max(contentHeight + extraPadding, minHeight)}px`;
+          console.log(`iframeの高さを調整: ${iframe.style.height}`);
+      } catch (e) {
+          console.warn('iframeの高さ取得に失敗:', e);
+          iframe.style.height = `${minHeight}px`;
+      }
   };
+
+  // 初回調整
   adjustHeight();
+
+  // ロード時の再調整
   iframe.contentWindow.addEventListener('load', adjustHeight);
-  try {
-      const observer = new MutationObserver(adjustHeight);
-      observer.observe(iframe.contentWindow.document.body, { childList: true, subtree: true });
-  } catch (e) {
-      console.warn('MutationObserverの設定に失敗しました:', e);
+
+  // 短い間隔でポーリング（動的コンテンツ対応）
+  const pollingInterval = setInterval(adjustHeight, 500); // 0.5秒間隔
+  setTimeout(() => {
+      clearInterval(pollingInterval);
+      adjustHeight(); // 最終調整
+      console.log('ポーリング終了');
+  }, 60000); // 60秒後に停止
+
+  // リサイズ時の再調整
+  window.addEventListener('resize', debounce(adjustHeight, 100));
+}
+
+// iframeのエラーハンドリング
+function handleIframeError(iframe) {
+  iframe.style.display = 'none';
+  const errorElement = document.getElementById('form-error');
+  if (errorElement) {
+      errorElement.style.display = 'block';
   }
 }
 
-// 初期読み込みとリサイズ時の再調整
-window.addEventListener('load', () => {
-  const iframe = document.getElementById('contact-form');
-  if (iframe) resizeIframe(iframe);
-});
+// デバウンス関数
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+      const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+  };
+}
 
-window.addEventListener('resize', () => {
+// 初回読み込み時の調整
+window.addEventListener('load', () => {
   const iframe = document.getElementById('contact-form');
   if (iframe) resizeIframe(iframe);
 });
